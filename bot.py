@@ -8,7 +8,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 bot = telegram.Bot(token=TOKEN)
 
 @app.route("/", methods=["GET", "POST"])
-index():
+def index():
     if request.method == "POST":
         json_update = request.get_json(force=True)
         update = telegram.Update.de_json(json_update, bot)
